@@ -12,6 +12,17 @@ body#website-home-body {
   color: white;
   font-family: 'Open Sans', sans-serif;
 }
+body#website-movies-index-body {
+  background-color: blue;
+}
+body#website-addcharacter-body {
+  height: 100%;
+  width: 100%;
+  background: no-repeat center center / 100% fixed url("../images/DisneyVaultBackground.jpg");
+  background-color: gray;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
 body#website-login-body {
   height: 100%;
   width: 100%;
@@ -37,6 +48,9 @@ body#website-users-page-body {
   font-family: 'Open Sans', sans-serif;
 }
 body#website-show-body {
+  background-color: blue;
+}
+body#website-profile-body {
   background-color: blue;
 }
 .home-page-center {

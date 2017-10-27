@@ -4,29 +4,56 @@
 	<% include ../head %>
 	<title></title>
 </head>
-<body>
-	<h2><%=person.username%></h2>
-	<br>
-	<h4>About Me</h4>
-
-		<p><%=person.personalMessage%></p><br>
-		<%if (typeof req.session.username !== 'undefined')%>
-			<%if (req.session.username === person.username) {%>
-				<form action="/users/<%=person.username%>?_method=PUT" method="POST">
-					<textarea name="personalMessage"></textarea><br>
-					<input type="submit" value="Update my About Me"><br>
-				</form>
-			<%}%>
-
-	<h4 font-weight="bold">My Movie Reviews</h4>
-		<h5>
-			<%if (person.ratedMovies.length > 0){%>
-				<%for (let i = 0; i < person.ratedMovies.length; i++){%>
-					<%=person.ratedMovies[i].movie%> : <%=person.ratedMovies[i].rating%>
+<body id="website-profile-body">
+	<div class="container-fluid">
+		<div class="row no-gutters justify-content-center">
+			<div class="col-1">
+				
+			</div>
+			<div class="col-10">
+				<div class="textContainer">
+					<h1><%=person.username%></h1>
+				</div>
+			</div>
+			<div class="col-1">
+				
+			</div>
+		</div>
+		<div class="row no-gutters justify-content-center">
+			<div class="col-1">
+				
+			</div>
+			<div class="col-10">
+				<div class="textContainer">
+					<h4 style="text-decoration: underline;">About Me</h4>
 					<br>
-				<%}%>
-			<%}%>
-		</h5>
+					<p><%=person.personalMessage%></p><br>
+					<%if (typeof req.session.username !== 'undefined'){%>
+						<%if (req.session.username === person.username) {%>
+							<form action="/users/<%=person.username%>?_method=PUT" method="POST">
+								<textarea name="personalMessage"></textarea><br>
+								<input type="submit" value="Update my About Me"><br>
+							</form>
+						<%}%>
+					<%}%>
+					<br>
+					<h4 style="text-decoration: underline;">My Movie Reviews</h4>
+					<br>
+					<h5>
+						<%if (person.ratedMovies.length > 0){%>
+							<%for (let i = 0; i < person.ratedMovies.length; i++){%>
+								<%=person.ratedMovies[i].movie%> : <%=person.ratedMovies[i].rating%>
+								<br>
+							<%}%>
+						<%}%>
+					</h5>
+				</div>
+			</div>
+			<div class="col-1">
+				
+			</div>
+		</div>
+	</div>
 
 	<div class="container-fluid" id="navbar-space">
 		<div class="row no-gutters align-items-center" id="empty-navbar-row">
@@ -35,20 +62,6 @@
 			</div>
 		</div>
 	</div>
-
-	<nav class="navbar fixed-bottom navbar-expand navbar-dark bg-dark">
-		<span class="navbar-brand mb-0 h1">MediaFranchiseApp</span>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<div class="navbar-nav">
-				<a class="nav-item nav-link" href="/">Home</a>
-				<a class="nav-item nav-link active" href="/movies">Movies <span class="sr-only">(current)</span></a>
-				<a class="nav-item nav-link" href="/users">Profiles</a>
-			</div>
-		</div>
-	</nav>
 
 	<nav class="navbar fixed-bottom navbar-expand navbar-dark bg-dark">
 		<span class="navbar-brand mb-0 h1">DVDb</span>

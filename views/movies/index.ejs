@@ -4,15 +4,22 @@
 	<% include ../head %>
 	<title></title>
 </head>
-<body>
-	<p>This is the movie listing page.</p>
-	<ul>
+<body id="website-movies-index-body">
+	<div class="container-fluid">
+		<div class="row no-gutters justify-content-center">
+			<div class="col-12">
+				<div class="textContainer">
+					<p>This is the movie listing page:</p>
 
-	<% for (let i = 0; i < movies.length; i++){%>
-		<li><a href="/movies/<%=movies[i].id%>"><%=movies[i].name %> - <%=movies[i].releaseDate%></a></li>
-	<%}%>
-
-	</ul>
+					<ul>
+						<% for (let i = 0; i < movies.length; i++){%>
+							<li><a href="/movies/<%=movies[i].id%>"><%=movies[i].name %> - <%=movies[i].releaseDate%></a></li>
+						<%}%>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="container-fluid" id="navbar-space">
 		<div class="row no-gutters align-items-center" id="empty-navbar-row">

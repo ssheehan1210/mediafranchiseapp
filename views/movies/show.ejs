@@ -190,7 +190,8 @@
 				<div class="textContainer">
 					<h3>Rate This Film</h3>
 					<form action="/movies/<%=movie.id%>?_method=PUT" method="POST">
-						<select name="rating"><%for (let i = 0; i < 11; i++){%>
+						<select name="rating">
+							<%for (let i = 0; i < 11; i++){%>
 								<option value="<%=i%>"><%=i%></option>
 							<%}%>
 						</select>
