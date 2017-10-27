@@ -4,8 +4,8 @@
 	<% include ../head %>
 	<title></title>
 </head>
-<body>
-	<header>
+<body id="website-new-movie-body">
+	<header style="margin-top: 0.5rem;">
 		<h1 id="create-movie-title">Create a Movie</h1>
 	</header>
 
@@ -15,6 +15,7 @@
 		<form id="create-movie-form" action="/movies" method="POST">
 			Title: <input type="text" name="name" style="margin-left: 63px;"><br>
 			Release Year: <input type="text" name="releaseDate"><br>
+			<br>
 			<input type="submit" value="Create Movie">
 		</form>
 	</main>
